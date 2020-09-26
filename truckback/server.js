@@ -33,7 +33,7 @@ app.put("/editorder/:id",(req,res) =>{
       if (err) throw err;
       var dbo = db.db("mydb");
       var myquery = { _id: ObjectID(req.params.id) };
-      var newvalues = { $set: {clientname: "",origin: "",destination: "",material: "",weight:"",price:"",paymentstatus: "",assignstatus: "",assigntodriver: "",assigntotruck: "",loadingdate: ""} };
+      var newvalues = { $set:req.body };
       dbo.collection("truck").updateOne(myquery, newvalues, function(err, re) {
         if (err) throw err;
         console.log("1 document updated");
