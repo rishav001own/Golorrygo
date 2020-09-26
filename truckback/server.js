@@ -27,6 +27,21 @@ app.post("/createorders", (request, response) => {
         });
       });
 });
+app.put("/editorder/:id",(req,res) =>{
+  console.log(req.params.id)
+  MongoClient.connect(CONNECTION_URL,mongoOptions, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("mydb");
+      var myquery = { _id: ObjectID(req.params.id) };
+      var newvalues = { $set: {clientname: "",origin: "",destination: "",material: "",weight:"",price:"",paymentstatus: "",assignstatus: "",assigntodriver: "",assigntotruck: "",loadingdate: ""} };
+      dbo.collection("truck").updateOne(myquery, newvalues, function(err, re) {
+        if (err) throw err;
+        console.log("1 document updated");
+        res.send(re);
+        db.close();
+      });
+    });
+} )
 app.get("/allorders/", (req,res) => {
   MongoClient.connect(CONNECTION_URL,mongoOptions, function(err, db) {
       if (err) throw err;

@@ -1,0 +1,18 @@
+.Nav{
+    align-content: center;
+    text-align: center;
+}
+.RouteBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 20vw;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    padding: 100px;
+
+}
+
+.RouteBox > p1{
+    border: black;
+}
