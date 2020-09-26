@@ -47,8 +47,8 @@ class order extends Component {
                         <td>Orgin</td>
                         <td>Destination</td>
                         <td>Material</td>
-                        <td>Weight</td>
-                        <td>Price</td>
+                        <td>Weight (in Kgs)</td>
+                        <td>Price (in Rs)</td>
                         <td>PaymentStatus</td>
                         <td>AssignStatus</td>
                         <td>AssigntoDriver</td>

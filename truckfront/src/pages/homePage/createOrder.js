@@ -72,7 +72,7 @@ class createOrder extends Component {
             loadingdate: this.state.loadingdate
         }
         axios.post('http://localhost:1000/createorders',orderObject)
-        .then(res => console.log(res.data));
+        .then(res => alert(res.data));
 
         this.setState({
             clientname:"",
