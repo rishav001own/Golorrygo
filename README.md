@@ -11,12 +11,17 @@ To launch application
  we have to run two terminal one is for backend and another is for frontend.
   for backend
   commad:
+  
   npm i
+
   nodemon server.js
+  
   
   for frontend
   command:
+  
   npm i
+  
   npm start
   
   
