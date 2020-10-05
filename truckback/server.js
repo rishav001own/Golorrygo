@@ -42,6 +42,21 @@ app.put("/editorder/:id",(req,res) =>{
       });
     });
 } )
+
+app.delete("/delete/:id",(req,res)=>{
+  console.log(req.params.id)
+  MongoClient.connect(CONNECTION_URL,mongoOptions, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("mydb");
+    var myquery = { _id: ObjectID(req.params.id)};
+    dbo.collection("truck").deleteOne(myquery, function(err, obj) {
+      if (err) throw err;
+      console.log("1 document deleted");
+      res.send(obj)
+      db.close();
+    });
+  });
+})
 app.get("/allorders/", (req,res) => {
   MongoClient.connect(CONNECTION_URL,mongoOptions, function(err, db) {
       if (err) throw err;
