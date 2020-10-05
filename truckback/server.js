@@ -85,7 +85,7 @@ app.get("/assignto", (req,res) => {
 
 app.get("/assigned", (req,res) => {
   MongoClient.connect(CONNECTION_URL, function(err, db) {
-      if (err) throw err;
+      if (err) throw err;s
       var dbo = db.db("mydb");
       var query = { assignstatus: "done" };
       dbo.collection("truck").find(query).toArray(function(err, result) {

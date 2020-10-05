@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link } from 'react-router-dom';
 
 class dataTable extends Component {
     render() {
@@ -41,6 +42,10 @@ class dataTable extends Component {
                 <td>
                     {this.props.obj.loadingdate}
                 </td>
+                <td> <Link className="edit-link" to={"/edit-link/" + this.props.obj._id}>
+                        Edit
+                    </Link>
+                    </td>
             </tr>
         );
     }

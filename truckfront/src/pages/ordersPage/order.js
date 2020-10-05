@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import DataTable from './dataTable';
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
+
 
 class order extends Component {
     constructor(props) {
@@ -54,7 +55,8 @@ class order extends Component {
                         <td>AssigntoDriver</td>
                         <td>AssignTotruck</td>
                         <td>LoadingDate</td>
-                    </tr>
+                        <td>Action</td>
+                        </tr>
                 </thead>
                 <tbody>
                     {this.dataTable()}

@@ -13,6 +13,7 @@ import UndonePaymentPage from './pages/paymentPage/undonePaymentPage';
 import DonePaymentPage from './pages/paymentPage/donePaymentPage';
 import Order from './pages/ordersPage/order';
 import CreateOrder from './pages/homePage/createOrder';
+import Edit from './pages/editpage/edit'
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
                 <Route path="/donepayment" component={DonePaymentPage}/>
                 <Route path="/assignto"  component={Assignto}/>
                 <Route path="/assigned"  component={Assigned}/>
+                <Route path='/edit-link' component={Edit}/>
               </Switch>
             </div>
           </Col>
